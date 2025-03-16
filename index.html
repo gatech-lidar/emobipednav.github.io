@@ -4,96 +4,13 @@
       <meta charset="UTF-8">
       <link rel="stylesheet" href="main.css">
       <link rel="icon" type="image/x-icon" href="assets/digit.png">
-      <title>Opt2Skill</title>
+      <title>EmoBipedNav</title>
   </head>
   <body>
 
-    <div id="video_grid">
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_indoor.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_indoor_corridor.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_backward.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_indoor_dist.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_push.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_outdoor.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/box_pickup.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/stairs.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_outdoor_grass.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/desk_manipulation.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/slides.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="video_wrapper">
-        <div class="video_container">
-          <video autoplay muted playsinline loop>
-            <source src="assets/hardware/walking_pick.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
+   
+      
+     
 
 
     <div id="title_slide">
@@ -169,27 +86,31 @@
     
     <div id="overview">
 
-      
-
-        <h1>Opt2Skill</h1>
+        <h1>EmoBipedNav</h1>
 
         <p>
-        Opt2Skill aims to develop loco-manipulation controllers that enable the Digit humanoid robot to track model-based optimal trajectories. 
-        We start by generating whole-body reference motions that align with the robot's dynamics and meet specific motion targets using DDP through a Crocoddyl solver. These reference trajectories are then used during the training and deployment of our RL policy. 
-        The RL policy augments the reference joint trajectories with a residual term, and the augmented target trajectory is fed into a low-level PD controller for the torque-controlled robot. 
-        Finally, we deploy the RL policies in both simulation and real-world scenarios. 
+          Our framework begins by obtaining estimated facial emotions using pre-trained CNN models. Simultaneously, we transform raw LiDAR 
+          scans into sequential pie-shape LGMs. These grid maps are converted into stacked pixel images which are further processed through 
+          an encoder constructed using convolutional neural networks (CNNs) to extract socially interactive and emotionally aware features. 
+          The resulting latent features are concatenated with the robot's last command and target position, which are fed into an actor-critic 
+          DRL structure implemented with multi-layer perceptrons (MLPs). The action output from the actor network is derived from the 
+          reduce-order model (ROM) and practically applied to a bipedal robot with full-body dynamics and constraints. The torso position and 
+          yaw angle obtained from Digit correspond to the ego-agent state. We use the angular momentum linear inverted pendulum 
+          planner (ALIP) and a passivity full-body controller with ankle actuation to track the desirable ROM trajectory.
         </p>
 
         <div class="approach">
-            <div class="video_container">
-                <video loop autoplay muted playsinline preload="metadata">
-                    <source src="assets/method.mp4" type="video/mp4">
-                </video>
-            </div>
+          <div class="video_container">
+              <iframe width="100%" height="100%" src="https://youtu.be/uOsFafqcxEs" 
+                      title="approach intruduction" frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+          </div>
         </div>
 
 
-        <h1>Whole-body Reference Motions Generation</h1>
+        <h1>Simulation benchmark in MuJoCo</h1>
         <p>
           Our approach leverages differential dynamic programming (DDP) to generate whole-body motions that obey the robot's dynamics and task requirements.
         </p>
@@ -248,11 +169,7 @@
 
         <h1>Torque Limits and Tracking Impact</h1>
 
-        <!--<p>
-          A notable challenge in motion imitation using human pose data is that re-targeted motions may not ensure kinematic or dynamic feasibility, which can degrade tracking performance and even cause tracking failures. 
-          To demonstrate how dynamics affect motion data quality, we define a <i>Jumping</i> task. We generate reference trajectories for this task with and without torque limits from the TO and analyze their difference in Opt2Skill's motion imitation performance.
-          Furthermore, we analyze the effect of the torque reference on tracking accuracy.
-        </p>-->
+  
         <p>
           We demenstrate that both including the torque limit in the reference trajectory and incorporating the torque reference into reward design significantly contribute to motion tracking performance. 
           The torque limit ensures a high-quality and dynamically feasible reference trajectory, while the torque reference guides the robot to track the motion more precisely.
