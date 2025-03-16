@@ -8,10 +8,6 @@
   </head>
   <body>
 
-   
-      
-     
-
 
     <div id="title_slide">
         <div class="title_left">
@@ -114,7 +110,7 @@
         <h1>Simulation benchmark in MuJoCo</h1>
         <p>
           ​Initially, we train and test our navigation policy in a physics-based simulator MuJoCo, using a full-body bipedal robot and a full-order 
-          dynamics. Simulatioin comarisons demonstrate the effectiveness of our social navigation pipeline for bipedal robots. 
+          dynamics. Simulatioin comparisons demonstrate the effectiveness of our social navigation pipeline for bipedal robots. 
         </p>
         <div class="benchmark">
           <div class="video_container">
@@ -126,24 +122,74 @@
           </div>
         </div>
 
+        <h1>Simulation in complex scenario</h1>
+        <p>
+          we deploy our policy into a more complex simulation scenarios, further indicating that our navigation policy enables the bipedal 
+          robot to adapt to complex and interactive scenarios integrated with pedestrian emotions.
+        </p>
+        <div class="benchmark">
+          <div class="video_container">
+              <iframe width="100%" height="100%" src="https://youtu.be/IpVLqscL89o" 
+                      title="simulation benchmark" frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+          </div>
+        </div>
+
+        <h1>Sim-to-real</h1>
+        <p>
+          we transfer our simulated navigation policy into real-world scenarios with diverse pedestrian motion patterns. The robot should avoid 
+          static obstacles while interacting with pedestrians. We include several representative motion patterns. For example, pedestrians 
+          cross in front of the robot, walk and suddenly stop in front of the robot, group together to cross in front of the robot, and randomly 
+          interact with the robot and other pedestrians. Furthermore, we randomly set pedestrian emotions. Accordingly, our social navigation 
+          policy can well adapt to its own behaviors to avoid collisions and reduce intrusions into discomfort zones of pedestrians, indicating 
+          the potential of sim-to-real transfer of our navigation policy. In addition, we integrate robot localization, pedestrian detection, 
+          and emotion recognition into our pipeline to further validate the practicality of our emotion-aware social navigation. These modules 
+          are achieved by an on-board stereo camera, and corresponding SLAM and perception algorithms. Pedestrians’ states can change between 
+          static and moving, and their emotions also alter between happy, neutral, and negative. To investigate further, we increase the 
+          environment complexities. For example, pedestrians group together and keep static to block the robot. Moreover, we increase the 
+          pedestrian density to make the scenario more crowded. 
+
+        </p>
+        <div class="benchmark">
+          <div class="video_container">
+              <iframe width="100%" height="100%" src="https://youtu.be/KnCzS2p8oLc" 
+                      title="simulation benchmark" frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+          </div>
+        </div>
+
+        <h1>Outdoor experiments</h1>
+        <p>
+          Finally, we deploy our navigation policy into more realistic environments, like the campus after classes. Pedestrians are more 
+          crowded, and interactions are more complicated. The bipedal robot can still achieve the emotion-aware social navigation task.
+        </p>
+        <div class="benchmark">
+          <div class="video_container">
+              <iframe width="100%" height="100%" src="https://youtu.be/QGdr_MnXXw0" 
+                      title="simulation benchmark" frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+          </div>
+        </div>
+
 
        
         <h1>BibTeX</h1>
          <p class="bibtex">
-            @article{liu2024opt2skill,<br>
-            &nbsp;&nbsp;title={Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation},<br>
-            &nbsp;&nbsp;author={Liu, Fukang and Gu, Zhaoyuan and Cai, Yilin and Zhou, Ziyi and Zhao, Shijie and Jung, Hyunyoung and Ha, Sehoon and Chen, Yue and Xu, Danfei and Zhao, Ye},<br>
+            @article{zhu2025emobipednav,<br>
+            &nbsp;&nbsp;title={EmoBipedNav: Emotion-aware Social Navigation for Bipedal Robots with Deep Reinforcement Learning},<br>
+            &nbsp;&nbsp;author={Wei Zhu, Abirath Raju, Abdulaziz Shamsah, Anqi Wu, Seth Hutchinson, and Ye Zhao},<br>
             &nbsp;&nbsp;journal={arXiv preprint arXiv:2409.20514}<br>
-            &nbsp;&nbsp;year={2024},<br>
+            &nbsp;&nbsp;year={2025},<br>
             }
         </p>
 
-        <h1>Acknowledgements</h1>
-        <p>
-          The authors would like to thank all the developers of <a href="https://github.com/loco-3d/crocoddyl" target="_blank" style="color: blue;">Crocoddyl</a> 
-          and <a href="https://github.com/stack-of-tasks/pinocchio" target="_blank" style="color: blue;">Pinocchio</a> for their open source frameworks. 
-          We are especially grateful to <a href="https://zhaomingxie.github.io/" target="_blank" style="color: blue;">Zhaoming Xie</a> and <a href="https://cmastalli.github.io/" target="_blank" style="color: blue;">Carlos Mastalli</a> for their professional discussions and insightful feedback.
-        </p>
+      
        
 
         <div class="footer">
