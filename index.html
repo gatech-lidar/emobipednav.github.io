@@ -98,43 +98,69 @@
 
     <div id="title_slide">
         <div class="title_left">
-            <h1>Opt2Skill: Imitating Dynamically-feasible Whole-Body <br> Trajectories for Versatile Humanoid Loco-Manipulation</h1>
+            <h1>EmoBipedNav: Emotion-aware Social Navigation for Bipedal Robots <br> with Deep Reinforcement Learning</h1>
         
 
             <div class="box alt">
               <div class="row uniform">
-                <div class="2u"><a href="https://fukangl.github.io/">                   <span class="image fit"><img src="assets/author_photo/fukang.jpg" alt="Fukang Liu" /></span>Fukang Liu</a></div>
-                <div class="2u"><a href="https://guzhaoyuan.com/">                      <span class="image fit"><img src="assets/author_photo/zhaoyuan.jpg" alt="Zhaoyuan Gu" /></span>Zhaoyuan Gu</a></div>
-                <div class="2u"><a href="https://missinglight.github.io/">              <span class="image fit"><img src="assets/author_photo/yilin.jpg" alt="Yilin Cai" /></span>Yilin Cai</a></div>
-                <div class="2u"><a href="https://ziyi-zhou.github.io/">                 <span class="image fit"><img src="assets/author_photo/ziyi.jpeg" alt="Ziyi Zhou" /></span>Ziyi Zhou</a></div>
-                <div class="2u"><a href="https://opt2skill.github.io/">                 <span class="image fit"><img src="assets/author_photo/shijie.jpg" alt="Shijie Zhao" /></span>Shijie Zhao</a></div>
-                <div class="2u"><a href="https://hyunyoungjung.github.io/">             <span class="image fit"><img src="assets/author_photo/hyunyoung.jpg" alt="Hyunyoung Jung" /></span>Hyunyoung Jung</a></div>
-                <div class="2u"><a href="https://faculty.cc.gatech.edu/~sha9/">         <span class="image fit"><img src="assets/author_photo/sehoon.jpg" alt="Sehoon Ha" /></span>Sehoon Ha</a></div>
-                <div class="2u"><a href="https://research.gatech.edu/people/yue-chen">  <span class="image fit"><img src="assets/author_photo/yue.jpg" alt="Yue Chen" /></span>Yue Chen</a></div>
-                <div class="2u"><a href="https://faculty.cc.gatech.edu/~danfei/">       <span class="image fit"><img src="assets/author_photo/danfei.jpg" alt="Danfei Xu" /></span>Danfei Xu<sup>†</sup></a></div>
-                <div class="2u"><a href="https://research.gatech.edu/people/ye-zhao">   <span class="image fit"><img src="assets/author_photo/ye.jpg" alt="Ye Zhao" /></span>Ye Zhao<sup>†</sup></a></div>
-                  <!-- Add more authors in the same way -->
+                <div class="2u">
+                  <a href="https://www.weizhu996.com/">                                
+                    <span class="image fit"><img src="assets/author_photo/weizhu.png" alt="Wei Zhu" /></span>Wei Zhu<sup>1</sup>
+                  </a>
+                </div>
+                <div class="2u">
+                  <a href="https://abirathr.github.io/AbirathRaju.github.io/">         
+                    <span class="image fit"><img src="assets/author_photo/abirath.jpg" alt="Abirath Raju" /></span>Abirath Raju<sup>1</sup>
+                  </a>
+                </div>
+                <div class="2u">
+                  <a href="https://scholar.google.com/citations?user=41GA5O4AAAAJ&hl=en">     
+                    <span class="image fit"><img src="assets/author_photo/aziz_shamsah.png" alt="Abdulaziz Shamsah" /></span>Abdulaziz Shamsah<sup>2</sup>
+                  </a>
+                </div>
+                <div class="2u">
+                  <a href="https://sites.google.com/site/anqiwuresearch/">                 
+                    <span class="image fit"><img src="assets/author_photo/anqi.jpg" alt="Anqi Wu" /></span>Anqi Wu<sup>1</sup>
+                  </a>
+                </div>
+                <div class="2u">
+                  <a href="https://scholar.google.com/citations?user=-JPZ21IAAAAJ&hl=en">                 
+                    <span class="image fit"><img src="assets/author_photo/seth.png" alt="Seth Hutchinson" /></span>Seth Hutchinson<sup>3</sup>
+                  </a>
+                </div>
+                <div class="2u">
+                  <a href="https://research.gatech.edu/people/ye-zhao">   
+                    <span class="image fit"><img src="assets/author_photo/ye_zhao.jpg" alt="Ye Zhao" /></span>Ye Zhao<sup>1</sup>
+                  </a>
+                </div>
               </div>
           </div>
 
             <div class="gatech">
-                <p>Georgia Institute of Technology</p>
+                <p><sup>1</sup>Georgia Institute of Technology, <sup>2</sup>Kuwait University, <sup>3</sup>Northeastern University</p>
             </div>
             <div class="button-container">
                 <a href="https://arxiv.org/abs/2409.20514" class="button">Paper</a>
-                <a href="https://www.youtube.com/watch?v=DRHfpCYXJfU" class="button">Video</a>
+                <a href="https://youtu.be/fNNL56sTSjY?si=sLgWn5P6o4MndMzl" class="button">Video</a>
+                <a href="https://github.com/GTLIDAR/emobipednav" class="code">Video</a>
             </div>
 
             <br>
 
             <div id="abstract" class="grid-container">
                 <p>
-                Humanoid robots are designed to perform diverse loco-manipulation tasks. However, they face challenges due to their high-dimensional and unstable dynamics, as well as the complex contact-rich nature of the tasks. 
-                Model-based optimal control methods offer precise and systematic control but are limited by high computational complexity and accurate contact sensing. 
-                On the other hand, reinforcement learning (RL) provides robustness and handles high-dimensional spaces but suffers from inefficient learning, unnatural motion, and sim-to-real gaps. 
-                To address these challenges, we introduce Opt2Skill, an end-to-end pipeline that combines model-based trajectory optimization with RL to achieve robust whole- body loco-manipulation. 
-                We generate reference motions for the Digit humanoid robot using differential dynamic programming (DDP) and train RL policies to track these trajectories. 
-                Our results demonstrate that Opt2Skill outperforms pure RL methods in both training efficiency and task performance, with optimal trajectories that account for torque limits enhancing trajectory tracking. We successfully transfer our approach to real-world applications.
+                  This study presents an emotion-aware navigation framework -- EmoBipedNav -- using deep reinforcement learning (DRL) 
+                  for bipedal robots walking in socially interactive environments. The inherent locomotion constraints of bipedal robots 
+                  challenge their safe maneuvering capabilities in dynamic environments. When combined with the intricacies of social 
+                  environments, including pedestrian interactions and social cues, such as emotions, these challenges become even more 
+                  pronounced. To address these coupled problems, we propose a two-stage pipeline that considers both bipedal locomotion 
+                  constraints and complex social environments. Specifically, social navigation scenarios are represented using sequential 
+                  LiDAR grid maps (LGMs), from which we extract latent features, including collision regions, emotion-related discomfort 
+                  zones, social interactions, and the spatio-temporal dynamics of evolving environments. The extracted features are 
+                  directly mapped to the actions of reduced-order models (ROMs) through a DRL architecture. Furthermore, the proposed 
+                  framework incorporates full-order dynamics and locomotion constraints during training, effectively accounting for 
+                  tracking errors and restrictions of the locomotion controller while planning the trajectory with ROMs. Comprehensive 
+                  experiments demonstrate that our approach exceeds both model-based planners and DRL-based baselines.
                 </p>
             </div>
         </div>
