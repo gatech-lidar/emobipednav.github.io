@@ -90,13 +90,14 @@
 
         <p>
           Our framework begins by obtaining estimated facial emotions using pre-trained CNN models. Simultaneously, we transform raw LiDAR 
-          scans into sequential pie-shape LGMs. These grid maps are converted into stacked pixel images which are further processed through 
-          an encoder constructed using convolutional neural networks (CNNs) to extract socially interactive and emotionally aware features. 
-          The resulting latent features are concatenated with the robot's last command and target position, which are fed into an actor-critic 
-          DRL structure implemented with multi-layer perceptrons (MLPs). The action output from the actor network is derived from the 
-          reduce-order model (ROM) and practically applied to a bipedal robot with full-body dynamics and constraints. The torso position and 
-          yaw angle obtained from Digit correspond to the ego-agent state. We use the angular momentum linear inverted pendulum 
-          planner (ALIP) and a passivity full-body controller with ankle actuation to track the desirable ROM trajectory.
+          scans into sequential pie-shape lidar grid maps (LGMs). These grid maps are converted into stacked pixel images which are further 
+          processed through an encoder constructed using convolutional neural networks (CNNs) to extract socially interactive and emotionally 
+          aware features. The resulting latent features are concatenated with the robot's last command and target position, which are fed 
+          into an actor-critic deep reinforcement learning (DRL) structure implemented with multi-layer perceptrons (MLPs). The action output 
+          from the actor network is derived from the reduce-order model (ROM) and practically applied to a bipedal robot with full-body 
+          dynamics and constraints. The torso position and yaw angle obtained from Digit correspond to the ego-agent state. We use the angular 
+          momentum linear inverted pendulum planner (ALIP) and a passivity full-body controller with ankle actuation to track the desirable 
+          ROM trajectory.
         </p>
 
         <div class="approach">
@@ -112,78 +113,19 @@
 
         <h1>Simulation benchmark in MuJoCo</h1>
         <p>
-          Our approach leverages differential dynamic programming (DDP) to generate whole-body motions that obey the robot's dynamics and task requirements.
+          ​Initially, we train and test our navigation policy in a physics-based simulator MuJoCo, using a full-body bipedal robot and a full-order 
+          dynamics. Simulatioin comarisons demonstrate the effectiveness of our social navigation pipeline for bipedal robots. 
         </p>
-        <div class="allegrofail">
-            <div class="video_container">
-                <video loop autoplay muted playsinline preload="metadata">
-                    <source src="assets/TO.mp4" type="video/mp4">
-                </video>
-            </div>
+        <div class="benchmark">
+          <div class="video_container">
+              <iframe width="100%" height="100%" src="https://youtu.be/DsfEIVZ708A" 
+                      title="simulation benchmark" frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+              </iframe>
+          </div>
         </div>
 
-        <p>
-          We study a rich set of loco-manipulation tasks, including walking, stair traversing, agile jumping, desk object reaching, and bulky-object handling.
-          For box manipulation tasks, we design heuristic target goals for the robot's hand trajectory, accounting for the transition between contact phases with and without holding the box by adding or removing its mass and inertia from the hands.
-        </p>
-        <div class="allegrofail">
-            <div class="video_container">
-                <video loop autoplay muted playsinline preload="metadata">
-                    <source src="assets/ref_motion.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-        <h1>Training in MuJoCo</h1>
-
-        <p>
-          We train RL-based motion imitation policies in MuJoCo simulator.
-        </p>
-        <div class="allegrofail">
-            <div class="video_container">
-                <video loop autoplay muted playsinline preload="metadata">
-                    <source src="assets/training_mujoco.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-
-        <h1>Compare Pure RL with Opt2Skill</h1>
-
-        <p>
-          We compare Opt2Skill with a pure RL method that learns from scratch in three different tasks, i.e., <i>Walking</i>, <i>Box Pickup</i>, and <i>Desk Object Reaching</i>. 
-          The pure RL baseline excludes reference trajectories in the observation space and the reward design.
-        </p>
-        <p>
-          Opt2Skill shows more accurate tracking, particularly in velocity for <i>Walking</i> and end-effector positioning for <i>Box Pickup</i> and <i>Desk Object Reaching</i>. 
-          In contrast, pure RL exhibits larger deviations in velocity, fails to lift the box, and could not accurately reach the target object in the <i>Desk Object Reaching</i> task.
-        </p>
-        <div class="allegrofail">
-            <div class="video_container">
-                <video loop autoplay muted playsinline preload="metadata">
-                    <source src="assets/baseline.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-
-        <h1>Torque Limits and Tracking Impact</h1>
-
-  
-        <p>
-          We demenstrate that both including the torque limit in the reference trajectory and incorporating the torque reference into reward design significantly contribute to motion tracking performance. 
-          The torque limit ensures a high-quality and dynamically feasible reference trajectory, while the torque reference guides the robot to track the motion more precisely.
-        </p>
-        <div class="allegrofail">
-            <div class="video_container">
-                <video loop autoplay muted playsinline preload="metadata">
-                    <source src="assets/ablation_TO.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-
-        
 
        
         <h1>BibTeX</h1>
