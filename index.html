@@ -100,7 +100,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/uOsFafqcxEs?autoplay=1&mute=1" 
+            src="https://www.youtube.com/embed/uOsFafqcxEs?&mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -109,15 +109,15 @@
 
         <h1>Simulation benchmark in MuJoCo</h1>
         <p>
-          ​Initially, we train and test our navigation policy in a physics-based simulator MuJoCo, using a full-body bipedal robot and a full-order 
-          dynamics. Simulatioin comparisons demonstrate the effectiveness of our social navigation pipeline for bipedal robots. 
+          Initially, we train and test our navigation policy in a physics-based simulator MuJoCo, using a full-body bipedal robot and a full-order 
+          dynamics. Simulatioin comparisons demonstrate the effectiveness of our social navigation pipeline for bipedal robots.
         </p>
 
         <div style="display: flex; justify-content: center;">
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/DsfEIVZ708A?autoplay=1&mute=1" 
+            src="https://www.youtube.com/embed/DsfEIVZ708A?mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -134,7 +134,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/IpVLqscL89o?autoplay=1&mute=1" 
+            src="https://www.youtube.com/embed/IpVLqscL89o?mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -160,7 +160,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/KnCzS2p8oLc?autoplay=1&mute=1" 
+            src="https://www.youtube.com/embed/KnCzS2p8oLc?mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -177,12 +177,20 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/QGdr_MnXXw0?autoplay=1&mute=1" 
+            src="https://www.youtube.com/embed/QGdr_MnXXw0?mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
           </iframe>
         </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              document.querySelectorAll(".autoplay-video").forEach(function(iframe) {
+                  iframe.src += "&autoplay=1";  // Append autoplay after the page loads
+              });
+          });
+          </script>
        
         <h1>BibTeX</h1>
          <p class="bibtex">
