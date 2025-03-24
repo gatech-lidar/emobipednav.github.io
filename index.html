@@ -100,7 +100,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/uOsFafqcxEs?&mute=1" 
+            src="https://www.youtube.com/embed/uOsFafqcxEs?autoplay=1&mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -117,7 +117,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/DsfEIVZ708A?mute=1" 
+            src="https://www.youtube.com/embed/DsfEIVZ708A?autoplay=1&mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -134,7 +134,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/IpVLqscL89o?mute=1" 
+            src="https://www.youtube.com/embed/IpVLqscL89o?autoplay=1&mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -160,7 +160,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/KnCzS2p8oLc?mute=1" 
+            src="https://www.youtube.com/embed/KnCzS2p8oLc?autoplay=1&mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -177,7 +177,7 @@
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/QGdr_MnXXw0?mute=1" 
+            src="https://www.youtube.com/embed/QGdr_MnXXw0?autoplay=1&mute=1" 
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
@@ -187,7 +187,7 @@
         <script>
           document.addEventListener("DOMContentLoaded", function() {
               document.querySelectorAll(".autoplay-video").forEach(function(iframe) {
-                  iframe.src += "&autoplay=1";  // Append autoplay after the page loads
+                  iframe.src = iframe.getAttribute("data-src"); // Dynamically set the `src`
               });
           });
           </script>
